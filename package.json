@@ -1,0 +1,22 @@
+{
+  "name": "node-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "server": "npm start --prefix server",
+    "client": "npm start --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "npm test --prefix client && npm test --prefix server",
+    "deploy": "npm run build --prefix client && npm run server --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "mongoose": "^6.3.5"
+  }
+}
